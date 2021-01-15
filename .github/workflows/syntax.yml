@@ -1,21 +1,13 @@
 name: syntax
 on: push
-jobs: 
-  task 1:
+jobs:
+  linux:
     runs-on: ubuntu-latest
-      strategy:
-        matrix:
-         python-version: [3.7, 3.8, 3.9]
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - run: echo Marian Carla- Georgia
-    - run: python3 scr/main.py
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - run: echo Marian Carla Georgia
+      - run: gcc -v
+      - run: python src/main.py
