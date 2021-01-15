@@ -3,9 +3,9 @@ on: push
 jobs: 
   task 1:
     runs-on: ubuntu-latest
-        strategy:
-          matrix:
-            python-version: [3.7, 3.8, 3.9]
+      strategy:
+        matrix:
+         python-version: [3.7, 3.8, 3.9]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
@@ -18,4 +18,4 @@ jobs:
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - run: echo Marian Carla- Georgia
-    - run: python main.py
+    - run: python3 scr/main.py
