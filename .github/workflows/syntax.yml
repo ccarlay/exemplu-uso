@@ -10,4 +10,4 @@ jobs:
           python-version: 3.7
       - run: echo Marian Carla Georgia
       - run: gcc -v
-      - run: python scr/main.py 5 6
+      - run: python scr/main.py 10 11
